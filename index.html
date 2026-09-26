@@ -84,7 +84,7 @@
 <body>
 
     <main>
-        <h1>
+        <h1 id="mensagem">
             Bom dia, Kaleb
         </h1>
 
@@ -100,15 +100,27 @@
 
     <script>
         function timer(){
-            let time = new Date();
+            let time = new Date().gethours();
 
             let horario = time.toLocaleTimeString("pt-BR", {
                 timeZone: 'America/Sao_Paulo'
             });
 
             var relogio = document.getElementById("relogio");
+            var mensagem = document.getElementById("mensagem")
 
             relogio.textContent = horario;
+
+            if (hora >= 6 && hora < 12) {
+                mensagem.innerText("Bom dia")
+            }
+            else if (hora >= 12 && hora < 18) {
+                mensagem.innerText("Boa tarde")
+            }
+            else {
+                mensagem.innerText("Boa Noite")
+            }
+
         }
 
         timer();
@@ -118,4 +130,3 @@
 
 </body>
 </html>
-

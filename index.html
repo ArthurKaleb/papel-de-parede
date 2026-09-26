@@ -100,7 +100,9 @@
 
     <script>
         function timer(){
-            let time = new Date().gethours();
+            let time = new Date();
+
+            let n1 = new Date().getHours();
 
             let horario = time.toLocaleTimeString("pt-BR", {
                 timeZone: 'America/Sao_Paulo'
@@ -111,14 +113,14 @@
 
             relogio.textContent = horario;
 
-            if (hora >= 6 && hora < 12) {
-                mensagem.innerText("Bom dia")
+            if (n1 >= 6 && n1 < 12) {
+                mensagem.innerText = "Bom dia, Kaleb"
             }
-            else if (hora >= 12 && hora < 18) {
-                mensagem.innerText("Boa tarde")
+            else if (n1 >= 12 && n1 < 18) {
+                mensagem.innerText = "Boa tarde, Kaleb"
             }
             else {
-                mensagem.innerText("Boa Noite")
+                mensagem.innerText = "Boa Noite, Kaleb"
             }
 
         }
